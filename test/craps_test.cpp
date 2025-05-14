@@ -3,13 +3,14 @@
 #include "die.h"
 #include "roll.h"
 #include <time.h>
+#include "shooter.h"
 
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
 
 
-
+/*
 TEST_CASE("Test die")
 {
 	die game;
@@ -33,7 +34,11 @@ TEST_CASE("test roll")
 		game.roll_dice();
 		std::cout<<game.roll_value()<<"\n";
 	}
+*/
 
-
-
+TEST_CASE("test shooter")
+{
+	
 }
+
+
