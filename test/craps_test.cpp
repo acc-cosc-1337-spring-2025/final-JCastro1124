@@ -16,6 +16,6 @@ TEST_CASE("Test roll")
 	srand(time(NULL));
 	for(int i = 0; i < 10; i++)
 	{
-		std::cout<<game.roll<<"\n";
+		std::cout<<game.roll()<<"\n";
 	}
 }
