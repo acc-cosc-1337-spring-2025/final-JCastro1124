@@ -5,6 +5,9 @@
 #include <time.h>
 #include "shooter.h"
 
+
+
+
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
@@ -38,7 +41,18 @@ TEST_CASE("test roll")
 
 TEST_CASE("test shooter")
 {
-	
+	die die_1;
+	die die_2;
+	shooter shoot;
+	roll* game;
+	srand(time(NULL));
+	for(int i = 0; i < 10; i++)
+	{
+		game = shoot.throw_dice(die_1,die_2);
+		game->roll_value();
+		std::cout<<game->roll_value()<<"\n";
+	}
+
 }
 
 

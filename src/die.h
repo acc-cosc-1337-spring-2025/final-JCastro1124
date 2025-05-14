@@ -2,7 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <random>
-
+#include <memory>
 
 using std::vector;
 
