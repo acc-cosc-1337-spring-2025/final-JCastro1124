@@ -7,11 +7,12 @@
 using std::vector;
 
 #ifndef DIE
-#define Die
+#define DIE
+
 class die
 {
 public:
-    int roll() {return sides[rand() %6];};
+    int Roll() {return sides[rand() %6];};
 
 
 
