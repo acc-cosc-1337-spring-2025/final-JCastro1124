@@ -4,8 +4,9 @@
 #include "roll.h"
 #include <time.h>
 #include "shooter.h"
-
-
+#include "phase.h"
+#include "point_phase.h"
+#include "come_out_phase.h"
 
 
 TEST_CASE("Verify Test Configuration", "verification") {
@@ -13,7 +14,7 @@ TEST_CASE("Verify Test Configuration", "verification") {
 }
 
 
-/*
+
 TEST_CASE("Test die")
 {
 	die game;
@@ -37,7 +38,7 @@ TEST_CASE("test roll")
 		game.roll_dice();
 		std::cout<<game.roll_value()<<"\n";
 	}
-*/
+
 
 TEST_CASE("test shooter")
 {
@@ -54,5 +55,47 @@ TEST_CASE("test shooter")
 	}
 
 }
+
+
+TEST_CASE("Come out phase")
+{
+	die die_1;
+	die die_2;
+	shooter shoot;
+	roll* roller;
+	come_out_phase come;
+	RollOutcome outcome;
+	srand(time(NULL));
+	for(int i = 0; i < 10; i++)
+	{
+		roller = shoot.throw_dice(die_1,die_2);
+		outcome = come.get_outcome(roller);
+		cout <<"outcome: "<<static_cast<int>(outcome)<<"\n";
+	}
+
+
+}
+
+
+TEST_CASE("point phase")
+{
+	die die_1;
+	die die_2;
+	shooter shoot;
+	roll* roller;
+	point_phase come(8);
+	RollOutcome outcome;
+	srand(time(NULL));
+	for(int i = 0; i < 10; i++)
+	{
+		roller = shoot.throw_dice(die_1,die_2);
+		outcome = come.get_outcome(roller);
+		cout <<"outcome: "<<static_cast<int>(outcome)<<"\n";
+	}
+
+
+}
+
+
 
 
